@@ -17,13 +17,8 @@ end
 
 puts "Seeding subscriptions..."
 # Create 20 random subscriptions
-20.times do
-  # Get a reader instance:
-  reader_id = Reader.ids.sample
-  # Get a magazine instance:
-  magazine_id = Magazine.ids.sample
-  # Get a random price between 10 and 100:
-  price = rand(10..100)
+10.times do
+  Subscription.create(reader_id: rand(0..8),magazine_id: rand(0..8),price: rand(10..100))
 
   # TODO: create subscriptions! Remember, a subscription belongs to a reader
   # and a subscription belongs to a magazine.
